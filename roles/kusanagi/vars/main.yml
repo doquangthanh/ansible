@@ -1,0 +1,8 @@
+---
+# vars file for kusanagi
+users:
+  - thanhdq
+sites:
+  - pan-pan
+target: 
+  - areteco.xyz
