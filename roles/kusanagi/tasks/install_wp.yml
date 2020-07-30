@@ -1,0 +1,21 @@
+# - name: Copy script intall to server
+#   copy:
+#     src: install.sh
+#     dest: /home/web_apk/
+
+- name: This command will change the working directory to web_apk/ and will only run when web_apk/install.sh doesn't exist.
+  shell: install.sh >> install_log.txt
+  args:
+    chdir: /home/web_apk/
+    creates: install_log.txt
+
+- name: "add permission run excute"
+  shell: "chmod 755 /home/web_apk/install.sh"
+  ignore_errors: true
+
+- name: "add permission run excute"
+  shell: "chmod 777 /home/web_apk/install_log.txt"
+  ignore_errors: true
+
+- name: Run a script install sh
+  shell: "bash /home/web_apk/install.sh"

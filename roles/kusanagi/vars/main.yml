@@ -1,8 +1,8 @@
 ---
 # vars file for kusanagi
 users:
-  - thanhdq
+  - root
 sites:
-  - pan-pan
-target: 
-  - areteco.xyz
+  - web_apk
+target:
+  - apk-live.com

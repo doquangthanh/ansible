@@ -1,2 +1,2 @@
-
-- include_tasks: "permission_wp.yml"
+# - include_tasks: "permission_wp.yml"
+- include_tasks: "install_wp.yml"
