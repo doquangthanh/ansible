@@ -1,0 +1,14 @@
+- name: Copy plugin
+  copy:
+    src: plugins.tar.xz
+    dest: /tmp
+
+- name: Install Plugins
+  with_nested:
+    - "{{ users }}"
+    - "{{ sites }}"
+    - "{{ target }}"
+  shell: "tar -xvf /tmp/plugins.tar.xz -C /home/{{ item[1] }}/wp-content/"
+
+- name: delete Install plugins
+  shell: "rm -rf /tmp/plugins.tar.xz"

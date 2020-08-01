@@ -1,0 +1,14 @@
+- name: Copy themes
+  copy:
+    src: themes.tar.xz
+    dest: /tmp
+
+- name: Install themes
+  with_nested:
+    - "{{ users }}"
+    - "{{ sites }}"
+    - "{{ target }}"
+  shell: "tar -xvf /tmp/themes.tar.xz -C /home/{{ item[1] }}/wp-content/"
+
+- name: delete Install themes
+  shell: "rm -rf /tmp/themes.tar.xz"

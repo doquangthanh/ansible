@@ -1,5 +1,5 @@
 ---
-# vars file for kusanagi
+# vars file for vps
 users:
   - root
 sites:

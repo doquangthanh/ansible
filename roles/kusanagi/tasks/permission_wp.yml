@@ -1,6 +1,0 @@
-- name: "Create folder test"
-  with_nested:
-    - "{{ users }}"
-    - "{{ sites }}"
-  shell: "mkdir /home/{{ item[1] }}/"
-  ignore_errors: true

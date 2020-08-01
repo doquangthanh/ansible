@@ -1,0 +1,8 @@
+- name: Build wp-config.php
+  with_nested:
+    - "{{ users }}"
+    - "{{ sites }}"
+    - "{{ target }}"
+  template:
+    src: wp-config.php
+    dest: "/home/{{ item[1] }}/wp-config.php"
